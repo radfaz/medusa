@@ -51,11 +51,11 @@ import {
   RuleTypeService,
 } from "@services"
 import { joinerConfig } from "../joiner-config"
-import { CreatePriceListRuleValueDTO, PricingRepositoryService } from "../types"
+import { RepositoryTypes } from "../types"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  pricingRepository: PricingRepositoryService
+  pricingRepository: RepositoryTypes.PricingRepositoryService
   currencyService: CurrencyService<any>
   moneyAmountService: MoneyAmountService<any>
   priceSetService: PriceSetService<any>
@@ -84,7 +84,7 @@ export default class PricingModuleService<
 > implements PricingTypes.IPricingModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly pricingRepository_: PricingRepositoryService
+  protected readonly pricingRepository_: RepositoryTypes.PricingRepositoryService
   protected readonly currencyService_: CurrencyService<TCurrency>
   protected readonly moneyAmountService_: MoneyAmountService<TMoneyAmount>
   protected readonly ruleTypeService_: RuleTypeService<TRuleType>
@@ -1403,11 +1403,7 @@ export default class PricingModuleService<
     )
 
     for (const priceListData of data) {
-      const {
-        rules = {},
-        prices = [],
-        ...priceListOnlyData
-      } = priceListData
+      const { rules = {}, prices = [], ...priceListOnlyData } = priceListData
 
       const [createdPriceList] = (await this.priceListService_.create(
         [
@@ -1901,7 +1897,8 @@ export default class PricingModuleService<
       ),
     ])
 
-    const priceListRuleValuesToCreate: CreatePriceListRuleValueDTO[] = []
+    const priceListRuleValuesToCreate: RepositoryTypes.CreatePriceListRuleValueDTO[] =
+      []
 
     for (const { id, price_list, rule_type } of createdRules) {
       const ruleValues = priceRuleValues.get(
