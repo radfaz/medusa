@@ -1,5 +1,20 @@
 # Change Log
 
+## 1.19.0
+
+### Minor Changes
+
+- [#5766](https://github.com/medusajs/medusa/pull/5766) [`428331a65`](https://github.com/medusajs/medusa/commit/428331a653b613767174d210fb96cc3b7eacb93a) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(medusa): Respond with order when cart is already completed
+
+### Patch Changes
+
+- [#5745](https://github.com/medusajs/medusa/pull/5745) [`e4bfa6c88`](https://github.com/medusajs/medusa/commit/e4bfa6c88ae56934528e66a7f8cc0edf3ad49e04) Thanks [@pKorsholm](https://github.com/pKorsholm)! - fix(medusa): raise error properly in api-key middleware if product is not found
+
+- Updated dependencies [[`c4deeee48`](https://github.com/medusajs/medusa/commit/c4deeee481399f5371d773173e20dc149d502e20), [`8f25ed8a1`](https://github.com/medusajs/medusa/commit/8f25ed8a10fe23e9342dc3d03545546b4ad4d6da)]:
+  - @medusajs/modules-sdk@1.12.5
+  - @medusajs/link-modules@0.2.5
+  - @medusajs/utils@1.11.2
+
 ## 1.18.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @medusajs/modules-sdk
 
+## 1.12.5
+
+### Patch Changes
+
+- [#5750](https://github.com/medusajs/medusa/pull/5750) [`c4deeee48`](https://github.com/medusajs/medusa/commit/c4deeee481399f5371d773173e20dc149d502e20) Thanks [@riqwan](https://github.com/riqwan)! - fix(modules-sdk): add graphql dependency to modules-sdk
+
+- Updated dependencies [[`8f25ed8a1`](https://github.com/medusajs/medusa/commit/8f25ed8a10fe23e9342dc3d03545546b4ad4d6da)]:
+  - @medusajs/utils@1.11.2
+
 ## 1.12.4
 
 ### Patch Changes
